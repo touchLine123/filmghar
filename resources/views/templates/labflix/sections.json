@@ -1,0 +1,106 @@
+{
+    "breadcrumb": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Breadcrumb Section",
+        "content": {
+            "images": {
+                "background_image": {
+                    "size": "1920x500"
+                }
+            }
+        }
+    },
+    "footer": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Footer Section",
+        "element": {
+            "images": {
+                "store_image": {
+                    "size": "150x45"
+                }
+            },
+            "link": "text",
+            "modal": true
+        },
+        "content": {
+            "about_us": "textarea",
+            "subscribe_title": "text",
+            "subscribe_subtitle": "text"
+        }
+    },
+    "policy_pages": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Policy Pages",
+        "element": {
+            "title": "text",
+            "slug": "title",
+            "description": "textarea-nic",
+            "modal": false,
+            "seo": true
+        }
+    },
+    "social_icon": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Social Icons",
+        "element": {
+            "title": "text",
+            "social_icon": "icon",
+            "url": "text",
+            "modal": true
+        }
+    },
+    "short_links": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Short Links",
+        "element": {
+            "title": "text",
+            "description": "textarea-nic",
+            "modal": false
+        }
+    },
+    "contact": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Contact Us",
+        "content": {
+            "map_link": "text"
+        }
+    },
+    "app_welcome": {
+        "builder": true,
+        "no_selection": true,
+        "name": "App Welcome Info",
+        "content": {
+            "images": {
+                "background_image": {
+                    "size": "1440 x2960"
+                }
+            },
+            "screen_1_heading": "text",
+            "screen_1_subheading": "text",
+            "screen_2_heading": "text",
+            "screen_2_subheading": "text",
+            "screen_3_heading": "text",
+            "screen_3_subheading": "text"
+        }
+    },
+    "faq": {
+        "builder": true,
+        "name": "FAQ Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "question": "text",
+            "answer": "textarea",
+            "icon": "icon",
+            "modal": true
+        }
+    }
+}
