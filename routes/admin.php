@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PayoutRequestController;
 
 Route::namespace('Auth')->group(function () {
     Route::middleware('admin.guest')->group(function () {
@@ -80,20 +81,12 @@ Route::middleware('admin')->group(function () {
         Route::post('status/{id}', 'CategoryController@status')->name('status');
     });
 
-    
-     Route::controller('PayoutRequestController')->name('payout.')->prefix('payout')->group(function () {
-        Route::get('/', 'index')->name('index');
-        Route::post('payout-requests/{id}/approve', 'PayoutRequestController')->name('approve');
-        Route::post('payout-requests/{id}/reject', 'PayoutRequestController@status')->name('reject');
+        
+    Route::prefix('payout')->name('payout.')->group(function () {
+        Route::get('/', [PayoutRequestController::class, 'index'])->name('index');
+        Route::post('payout-requests/{id}/approve', [PayoutRequestController::class, 'approve'])->name('approve');
+        Route::post('payout-requests/{id}/reject', [PayoutRequestController::class, 'reject'])->name('reject');
     });
-
-
-    Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
-        Route::get('payout-requests', [\App\Http\Controllers\Admin\PayoutRequestController::class, 'index'])->name('admin.payout_requests.index');
-        Route::post('payout-requests/{id}/approve', [\App\Http\Controllers\Admin\PayoutRequestController::class, 'approve'])->name('admin.payout_requests.approve');
-        Route::post('payout-requests/{id}/reject', [\App\Http\Controllers\Admin\PayoutRequestController::class, 'reject'])->name('admin.payout_requests.reject');
-    });
-
 
     //Vendor
     Route::controller('VendorController')->name('vendors.')->prefix('vendor')->group(function () {

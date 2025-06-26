@@ -11,10 +11,11 @@ use Illuminate\Support\Facades\DB;
 class PayoutRequestController extends Controller
 {
 
-    public function index()
+    public function index() 
     {
+        $pageTitle = "All Payout";
         $payoutRequests = PayoutRequest::with('vendor')->latest()->paginate(20);
-        return view('admin.payout_requests.index', compact('payoutRequests'));
+        return view('admin.payout_requests.index', compact('payoutRequests', 'pageTitle'));
     }
 
     public function approve($id)

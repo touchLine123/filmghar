@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Vendor\PayoutRequestController as VendorPayoutRequestController;
 
 Route::namespace('Vendor\Auth')->group(function () {
     Route::middleware('vendor.guest')->group(function () {
@@ -122,6 +123,12 @@ Route::middleware('vendor')->group(function () {
     
         });
 
+
+        Route::prefix('payout')->name('vendor.')->group(function () {
+             Route::get('payout-requests', [VendorPayoutRequestController::class, 'index'])->name('payout.index');
+            Route::get('payout-request', [VendorPayoutRequestController::class, 'create'])->name('create');
+            Route::post('payout-request', [VendorPayoutRequestController::class, 'store'])->name('store');
+        });
     
     });
 

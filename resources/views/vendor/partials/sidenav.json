@@ -83,6 +83,16 @@
                 "menu_active": "vendor.item.rents"
             }
         ]
+    },
+    "payout": {
+        "keyword": [
+            "Payouts",
+            "Manage Plans"
+        ],
+        "title": "Payouts Listing",
+        "icon": "las la-coins",
+        "route_name": "vendor.payout.index",
+        "menu_active": "vendor.payout.index"
     }
 
    

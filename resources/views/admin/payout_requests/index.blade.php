@@ -25,18 +25,19 @@
                                 <td>{{ $request->created_at }}</td>
                                 <td>{{ $request->approved_at ?? '-' }}</td>
                                 <td>
-                                    @if($request->status == 'pending')
-                                        <form action="{{ route('admin.payout_requests.approve', $request->id) }}" method="POST" style="display:inline-block;">
+                                  @if($request->status == 'pending')
+                                        <form action="{{ url('admin/payout/payout-requests/'.$request->id.'/approve') }}" method="POST" style="display:inline-block;">
                                             @csrf
                                             <button type="submit" class="btn btn-success btn-sm">Approve</button>
                                         </form>
-                                        <form action="{{ route('admin.payout_requests.reject', $request->id) }}" method="POST" style="display:inline-block;">
+                                        <form action="{{ url('admin/payout/payout-requests/'.$request->id.'/reject') }}" method="POST" style="display:inline-block;">
                                             @csrf
                                             <button type="submit" class="btn btn-danger btn-sm">Reject</button>
                                         </form>
                                     @else
                                         <span class="text-muted">-</span>
                                     @endif
+
                                 </td>
                             </tr>
                         @endforeach
